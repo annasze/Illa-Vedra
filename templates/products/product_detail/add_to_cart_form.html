@@ -1,0 +1,26 @@
+<form x-data="{ stockId: '' } "
+>
+    <p class="pt-8 pb-2 tracking-wide">Please select size</p>
+    <ul class="grid grid-cols-4 2xl:grid-cols-5 gap-3">
+        {% for stock in product.stock.all %}
+        <li class="min-w-fit h-10 flex items-center justify-center bg-white border
+           {% if stock.quantity == 0 %}
+           cursor-not-allowed text-zinc-300
+           {% else %}
+           cursor-pointer hover:border-blue-800 border-black
+           {% endif %}"
+            :class="{ 'border-2 border-blue-900 font-semibold text-blue-800' : stockId === {{stock.id}} }"
+            {% if stock.quantity != 0 %} @click="stockId = {{stock.id}}" {% endif %}>
+            <input type="radio" name="{{stock.id}}" value="{{stock.id}}"
+                   {% if stock.quantity == 0 %} disabled {% endif %} class="hidden">
+            {{stock.size}}
+        </li>
+        {% endfor %}
+    </ul>
+    <button type="submit"
+            disabled
+            class="bg-blue-800 hover:bg-blue-900 text-white cursor-pointer
+            text-center my-8 p-2 w-full tracking-wide">
+        Add to cart
+    </button>
+</form>

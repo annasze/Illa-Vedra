@@ -1,0 +1,136 @@
+[
+{
+    "model": "products.parentproduct",
+    "pk": 1,
+    "fields": {
+        "category": 3,
+        "name": "Strapless dress",
+        "description": "Available in a myriad of color options, you can express your unique style with shades ranging from vibrant tropical hues to sophisticated neutrals. The lightweight and airy nature of the viscose material ensures a breezy feel, allowing you to stay cool and chic in every situation.",
+        "fabric_info": "100% viscose",
+        "sizes_info": "",
+        "campaign": 1,
+        "all_products_json": {
+            "7": {
+                "slug": "strapless-dress-sky-blue",
+                "img_public_id": "qmsgsyi8yfeixbah7f8w"
+            },
+            "8": {
+                "slug": "strapless-dress-deep-red",
+                "img_public_id": "pdmtuoeapvsz0on1x8th"
+            }
+        },
+        "search_keywords": "strapless summer chic sleeveless dress"
+    }
+},
+{
+    "model": "products.parentproduct",
+    "pk": 2,
+    "fields": {
+        "category": 2,
+        "name": "Pencil dress",
+        "description": "Embrace effortless charm with our pencil summer dress, a delightful blend of comfort and style. Crafted from breathable fabrics in a sleek pencil silhouette, this dress is perfect for warm-weather occasions, whether it's a picnic in the park or a day out with friends. Its relaxed yet chic design ensures you stay cool and fashionable all season long",
+        "fabric_info": "100% cotton",
+        "sizes_info": "",
+        "campaign": 1,
+        "all_products_json": {
+            "9": {
+                "slug": "pencil-dress-bottle-green",
+                "img_public_id": "lmuckfapvaz80u2xhftn"
+            },
+            "10": {
+                "slug": "pencil-dress-deep-blue",
+                "img_public_id": "tho4pqom8nux9r6ycb93"
+            }
+        },
+        "search_keywords": "pencil summer informal chic dress"
+    }
+},
+{
+    "model": "products.parentproduct",
+    "pk": 3,
+    "fields": {
+        "category": 9,
+        "name": "Merino wool sweater",
+        "description": "Cozy up in style with our wool sweater, a must-have for chilly summer evenings. Made from luxurious wool blend, this sweater combines warmth with sophistication. Its relaxed fit and timeless design make it the perfect layering piece for any casual outing or fireside gathering.",
+        "fabric_info": "100 % merino wool",
+        "sizes_info": "It's an oversized model",
+        "campaign": 2,
+        "all_products_json": {
+            "11": {
+                "slug": "merino-wool-sweater-baby-blue",
+                "img_public_id": "wyek8qcgfdbjhvlwllfh"
+            }
+        },
+        "search_keywords": "woolen sweater sale merino wool"
+    }
+},
+{
+    "model": "products.parentproduct",
+    "pk": 4,
+    "fields": {
+        "category": 10,
+        "name": "Skin-tight T-shirt",
+        "description": "Accentuate your curves with our skin-tight t-shirt, crafted for both comfort and style. Available in a variety of vibrant hues, it's the perfect staple for any fashion-forward wardrobe.",
+        "fabric_info": "100% cotton",
+        "sizes_info": "Take your regular size for a skin-tight fit. \r\nTake la arger size for a more loose fit.",
+        "campaign": 1,
+        "all_products_json": {
+            "12": {
+                "slug": "skin-tight-t-shirt-grey",
+                "img_public_id": "kxjefnkqd1jf030zxpih"
+            },
+            "13": {
+                "slug": "skin-tight-t-shirt-navy-blue",
+                "img_public_id": "khknr0uwqi8lfizyngqv"
+            },
+            "14": {
+                "slug": "skin-tight-t-shirt-olive",
+                "img_public_id": "w9go3621jzdu02j24gjx"
+            },
+            "15": {
+                "slug": "skin-tight-t-shirt-deep-red",
+                "img_public_id": "yfawsd27ivbtjghnct9t"
+            }
+        },
+        "search_keywords": "basic homewear T-Shirt cotton comfy"
+    }
+},
+{
+    "model": "products.parentproduct",
+    "pk": 5,
+    "fields": {
+        "category": 6,
+        "name": "Chic trousers",
+        "description": "Elevate your look with our elegant red trousers, tailored for sophistication and flair. The striking hue adds a bold touch to any ensemble, ensuring you stand out with timeless style.",
+        "fabric_info": "100 % wool",
+        "sizes_info": "",
+        "campaign": 1,
+        "all_products_json": {
+            "16": {
+                "slug": "chic-trousers-red",
+                "img_public_id": "dbwdrqi1ytvm0kwnxesx"
+            }
+        },
+        "search_keywords": "woolen wool trousers red elegant chic"
+    }
+},
+{
+    "model": "products.parentproduct",
+    "pk": 6,
+    "fields": {
+        "category": 2,
+        "name": "Summer dress",
+        "description": "Embrace nautical charm with our summer dress in marine style, evoking seaside elegance with its striped design and breezy silhouette. Perfect for coastal adventures or simply soaking up the sun, this dress effortlessly captures the essence of summer.",
+        "fabric_info": "100% cotton",
+        "sizes_info": "",
+        "campaign": 1,
+        "all_products_json": {
+            "17": {
+                "slug": "summer-dress-marine",
+                "img_public_id": "x8a01wjbutmvevopwd8f"
+            }
+        },
+        "search_keywords": ""
+    }
+}
+]

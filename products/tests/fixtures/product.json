@@ -1,0 +1,156 @@
+[
+{
+    "model": "products.product",
+    "pk": 7,
+    "fields": {
+        "parent": 1,
+        "style": "sky blue",
+        "color": 2,
+        "price": "99.00",
+        "discounted_price": null,
+        "slug": "strapless-dress-sky-blue",
+        "main_image": "image/upload/v1712863927/qmsgsyi8yfeixbah7f8w.jpg",
+        "views": 556
+    }
+},
+{
+    "model": "products.product",
+    "pk": 8,
+    "fields": {
+        "parent": 1,
+        "style": "deep red",
+        "color": 1,
+        "price": "99.00",
+        "discounted_price": "79.00",
+        "slug": "strapless-dress-deep-red",
+        "main_image": "image/upload/v1712864197/pdmtuoeapvsz0on1x8th.jpg",
+        "views": 55
+    }
+},
+{
+    "model": "products.product",
+    "pk": 9,
+    "fields": {
+        "parent": 2,
+        "style": "bottle green",
+        "color": 3,
+        "price": "119.00",
+        "discounted_price": null,
+        "slug": "pencil-dress-bottle-green",
+        "main_image": "image/upload/v1712864927/lmuckfapvaz80u2xhftn.jpg",
+        "views": 97
+    }
+},
+{
+    "model": "products.product",
+    "pk": 10,
+    "fields": {
+        "parent": 2,
+        "style": "deep blue",
+        "color": 2,
+        "price": "119.00",
+        "discounted_price": null,
+        "slug": "pencil-dress-deep-blue",
+        "main_image": "image/upload/v1712864928/tho4pqom8nux9r6ycb93.jpg",
+        "views": 111
+    }
+},
+{
+    "model": "products.product",
+    "pk": 11,
+    "fields": {
+        "parent": 3,
+        "style": "baby blue",
+        "color": 2,
+        "price": "99.00",
+        "discounted_price": "49.00",
+        "slug": "merino-wool-sweater-baby-blue",
+        "main_image": "image/upload/v1712865434/wyek8qcgfdbjhvlwllfh.jpg",
+        "views": 34
+    }
+},
+{
+    "model": "products.product",
+    "pk": 12,
+    "fields": {
+        "parent": 4,
+        "style": "grey",
+        "color": 7,
+        "price": "29.00",
+        "discounted_price": "19.00",
+        "slug": "skin-tight-t-shirt-grey",
+        "main_image": "image/upload/v1712908758/kxjefnkqd1jf030zxpih.jpg",
+        "views": 5
+    }
+},
+{
+    "model": "products.product",
+    "pk": 13,
+    "fields": {
+        "parent": 4,
+        "style": "navy blue",
+        "color": 9,
+        "price": "29.00",
+        "discounted_price": null,
+        "slug": "skin-tight-t-shirt-navy-blue",
+        "main_image": "image/upload/v1712908759/khknr0uwqi8lfizyngqv.jpg",
+        "views": 33
+    }
+},
+{
+    "model": "products.product",
+    "pk": 14,
+    "fields": {
+        "parent": 4,
+        "style": "olive",
+        "color": 8,
+        "price": "29.00",
+        "discounted_price": null,
+        "slug": "skin-tight-t-shirt-olive",
+        "main_image": "image/upload/v1712908759/w9go3621jzdu02j24gjx.jpg",
+        "views": 52
+    }
+},
+{
+    "model": "products.product",
+    "pk": 15,
+    "fields": {
+        "parent": 4,
+        "style": "deep red",
+        "color": 1,
+        "price": "29.00",
+        "discounted_price": null,
+        "slug": "skin-tight-t-shirt-deep-red",
+        "main_image": "image/upload/v1712909589/yfawsd27ivbtjghnct9t.jpg",
+        "views": 199
+    }
+},
+{
+    "model": "products.product",
+    "pk": 16,
+    "fields": {
+        "parent": 5,
+        "style": "red",
+        "color": 1,
+        "price": "149.00",
+        "discounted_price": null,
+        "slug": "chic-trousers-red",
+        "main_image": "image/upload/v1712910448/dbwdrqi1ytvm0kwnxesx.jpg",
+        "views": 155
+    }
+},
+{
+    "model": "products.product",
+    "pk": 17,
+    "fields": {
+        "parent": 6,
+        "style": "marine",
+        "color": 9,
+        "price": "89.00",
+        "discounted_price": null,
+        "slug": "summer-dress-marine",
+        "main_image": "image/upload/v1712911294/x8a01wjbutmvevopwd8f.jpg",
+        "views": 97
+    }
+}
+]

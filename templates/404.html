@@ -1,0 +1,25 @@
+{% extends "./base.html" %}
+{% load static %}
+
+{% block title %}
+Page not found |
+{% endblock %}
+
+{% block content %}
+<div class="flex items-center justify-center w-full">
+    <div class="w-full flex justify-center">
+        <img src="{% static 'images/background.jpg' %}"/>
+    </div>
+</div>
+
+<div class="w-full text-center p-20 *:my-2">
+    <p class="font-medium text-lg">We're sorry.</p>
+    <p>Requested page has not been found.</p>
+    <a href="{% url 'products:main_page' %}">
+        <button class="bg-blue-800 hover:bg-blue-900 text-white cursor-pointer
+            text-center my-8 p-2 min-w-fit tracking-wide">
+            Go to main page
+        </button>
+    </a>
+</div>
+{% endblock %}

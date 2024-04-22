@@ -1,0 +1,24 @@
+<div class="overflow-y-auto"
+     x-init="setSize()"
+>
+    {% for size_group in size_groups %}
+        <div class="m-8">
+            <ul class="grid grid-cols-4 gap-3">
+                {% for size in size_group.sizes.all %}
+                <li @click="toggleFilter(size, '{{size.pk}}')"
+                    class="flex items-center justify-center border hover:border-slate-800 h-10 cursor-pointer"
+                    :class="{ 'font-medium border-slate-900' : size.includes('{{ size.pk }}') }">
+                    {{ size.name }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endfor %}
+</div>
+<div class="mt-auto m-8 pb-8 md:pb-0">
+    <button class="bg-blue-800 hover:bg-blue-900 text-white cursor-pointer w-full p-2"
+            @click="redirect(newParams())"
+    >
+        Submit
+    </button>
+</div>

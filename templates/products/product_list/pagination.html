@@ -1,0 +1,12 @@
+{% load product_tags %}
+<div class="text-center">
+    {% if page_obj.has_previous %}
+        <a href="{{request.build_absolute_uri | paginate:1}}">&lt;&lt;</a>
+        <a href="{{request.build_absolute_uri | paginate:page_obj.previous_page_number}}">&lt;</a>
+    {% endif %}
+    {{ page_obj.number }} out of {{ page_obj.paginator.num_pages }}
+    {% if page_obj.has_next %}
+        <a href="{{request.build_absolute_uri | paginate:page_obj.next_page_number}}">&gt;</a>
+        <a href="{{request.build_absolute_uri | paginate:page_obj.paginator.num_pages }}">&gt;&gt;</a>
+    {% endif %}
+</div>

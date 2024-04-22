@@ -1,0 +1,89 @@
+{% extends "../../base.html" %}
+{% load static %}
+{% load mptt_tags %}
+{% load product_tags %}
+{% load cloudinary %}
+
+{% block style %}
+    input[type=range]::-webkit-slider-thumb {
+        pointer-events: all;
+        width: 24px;
+        height: 24px;
+        -webkit-appearance: none;
+    }
+{% endblock %}
+
+{% block title %}
+    {% split request.path "/" as path_categories %}
+    {{ path_categories|last|capfirst }} |
+{% endblock %}
+
+{% block content %}
+<!--categories for sm and md screens -->
+<div class="w-full lg:hidden flex flex-wrap items-center justify-center">
+    {% recursetree categories %}
+        <ul>
+            <li class="w-fit border border-solid p-2 m-1 text-center">
+                <a href="{{node.get_absolute_url}}">
+                    {{ node.name }}
+                </a>
+            </li>
+        </ul>
+        {% if not node.is_leaf_node %}
+            <ul class="children flex flex-wrap items-center justify-center">
+                {{ children }}
+            </ul>
+        {% endif %}
+    {% endrecursetree %}
+</div>
+
+<!--categories for lg+ screens -->
+<div class="flex flex-wrap">
+    <div class="hidden columns-1 w-1/6 lg:block p-4">
+        <ul>
+            {% split request.path "/" as path_categories %}
+            {% recursetree categories %}
+            <li style="text-indent: {{node.level|multiply:15}}px;">
+                <a href="{{node.get_absolute_url}}"
+                   style="{% if node.path_crumb in path_categories %}
+                          font-weight: 500;
+                          {% endif %}">{{ node.name }}</a>
+                {% if not node.is_leaf_node %}
+                    <ul class="children">
+                        {{ children }}
+                    </ul>
+                {% endif %}
+            </li>
+            {% endrecursetree %}
+        </ul>
+    </div>
+
+    <div class="w-full lg:w-5/6">
+        <!-- Filters div -->
+        {% include "./filters.html" %}
+
+        {% if products %}
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-0">
+                {% for product in products %}
+                    {% include '../partials/product.html' %}
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="w-full text-center p-10">
+                <p class="font-medium text-lg m-1">We're sorry</p>
+                <p>There were no results</p>
+                <p>Try using a different search term</p>
+            </div>
+        {% endif %}
+
+        {% if page_obj.paginator.num_pages > 1 %}
+            {% include './pagination.html' %}
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/filter.js' %}"></script>
+    <script src="{% static 'js/range.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,20 @@
+<div x-init="setSorting()" class="overflow-y-auto">
+    <ul class="grid grid-cols-1 gap-3 m-8">
+        {% for id, human_readable in ordering_options.items %}
+            <li @click="sorting='{{id}}'"
+                class="flex items-center justify-left border hover:border-slate-800 cursor-pointer p-2"
+                :class="{ 'font-medium border-slate-900' : sorting == '{{id}}' }">
+                {{human_readable|capfirst}}
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+<div class="mt-auto m-8 pb-8 md:pb-0">
+    <button class="bg-blue-800 hover:bg-blue-900 text-white cursor-pointer w-full p-2"
+            @click="redirect(newParams())"
+    >
+        Submit
+    </button>
+</div>
+
+

@@ -1,0 +1,35 @@
+[
+{
+    "model": "products.campaign",
+    "pk": 1,
+    "fields": {
+        "name": "New collection",
+        "slug": "new-collection",
+        "image": "image/upload/v1712857090/z3ytghteoavzelafvv1r.jpg",
+        "description": "Step into the sunshine with our captivating summer collection of dresses! Embrace the warmth of the season with breezy silhouettes, vibrant prints, and irresistible pastel hues. From flirty sundresses perfect for picnics in the park to elegant maxi dresses destined for sunset soirées, each piece exudes effortless charm and timeless style. Elevate your summer wardrobe with our curated selection, designed to make every moment under the sun a stylish affair.",
+        "is_active": true
+    }
+},
+{
+    "model": "products.campaign",
+    "pk": 2,
+    "fields": {
+        "name": "Winter sale",
+        "slug": "winter-sale",
+        "image": "image/upload/v1712857364/w9sknyad3gvevjyiantf.jpg",
+        "description": "Gear up for the next season in style with our winter sale collection of coats and sweaters! Embrace the chill with our selection of cozy essentials, from classic wool coats to snug cable-knit sweaters, all offered at irresistible prices. Stay ahead of the cold weather curve while keeping your budget in check with our curated assortment of winter wardrobe must-haves.",
+        "is_active": true
+    }
+},
+    {
+    "model": "products.campaign",
+    "pk": 3,
+    "fields": {
+        "name": "Inactive",
+        "slug": "inactive",
+        "image": "",
+        "description": "",
+        "is_active": false
+    }
+}
+]

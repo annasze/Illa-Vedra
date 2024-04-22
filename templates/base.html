@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    {% load cloudinary %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Alpine.js-->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.8/dist/cdn.min.js"></script>
+    <!--CSS-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,100,0,-25"/>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,100,1,-25"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Roboto+Slab:wght@100..900&display=swap"
+          rel="stylesheet">
+    <title>{% block title %}{% endblock %} Illa Vedrà</title>
+    <style>
+    [x-cloak] {
+        display: none !important;
+    }
+
+    .logo {
+      font-family: "Kode Mono", monospace;
+      font-optical-sizing: auto;
+      font-weight: 200;
+      font-style: normal;
+    }
+
+    {% block style %}
+    {% endblock %}
+
+    </style>
+</head>
+
+<body class="max-w-screen-2xl m-0 m-auto w-11/12">
+    <a href="{% url 'products:main_page' %}"
+       class="logo flex justify-center w-full text-3xl text-blue-900
+       tracking-wide p-2 [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]"
+    >
+        Illa Vedrà
+    </a>
+    <div id="blur" class="fixed inset-0 bg-slate-500 bg-opacity-80 backdrop-blur-sm z-10 hidden"></div>
+
+    {% include './products/partials/search_bar.html' %}
+    {% block content %}
+    {% endblock %}
+
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('dropdown', () => ({
+                open: false,
+                toggle() {
+                    this.open = !this.open;
+                },
+            }));
+
+            Alpine.data('disableWindow', () => ({
+                disable() {
+                    document.body.style = "overflow: hidden";
+                    elem = document.getElementById('blur');
+                    elem.classList.toggle('hidden');
+                    },
+                enable() {
+                    document.body.style = "overflow: auto";
+                    elem = document.getElementById('blur');
+                    elem.classList.toggle('hidden');
+                    },
+            }));
+        });
+    </script>
+
+    {% block scripts %}
+    {% endblock %}
+
+    </body>
+</html>

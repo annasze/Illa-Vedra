@@ -1,0 +1,23 @@
+[
+{
+    "model": "products.sizegroup",
+    "pk": 1,
+    "fields": {
+        "name": "numerical"
+    }
+},
+{
+    "model": "products.sizegroup",
+    "pk": 2,
+    "fields": {
+        "name": "One size"
+    }
+},
+{
+    "model": "products.sizegroup",
+    "pk": 3,
+    "fields": {
+        "name": "literal"
+    }
+}
+]

@@ -1,0 +1,106 @@
+[
+{
+    "model": "products.size",
+    "pk": 1,
+    "fields": {
+        "name": "32",
+        "group": 1
+    }
+},
+{
+    "model": "products.size",
+    "pk": 2,
+    "fields": {
+        "name": "34",
+        "group": 1
+    }
+},
+{
+    "model": "products.size",
+    "pk": 3,
+    "fields": {
+        "name": "36",
+        "group": 1
+    }
+},
+{
+    "model": "products.size",
+    "pk": 4,
+    "fields": {
+        "name": "38",
+        "group": 1
+    }
+},
+{
+    "model": "products.size",
+    "pk": 5,
+    "fields": {
+        "name": "One size",
+        "group": 2
+    }
+},
+{
+    "model": "products.size",
+    "pk": 6,
+    "fields": {
+        "name": "XS",
+        "group": 3
+    }
+},
+{
+    "model": "products.size",
+    "pk": 7,
+    "fields": {
+        "name": "S",
+        "group": 3
+    }
+},
+{
+    "model": "products.size",
+    "pk": 8,
+    "fields": {
+        "name": "M",
+        "group": 3
+    }
+},
+{
+    "model": "products.size",
+    "pk": 9,
+    "fields": {
+        "name": "L",
+        "group": 3
+    }
+},
+{
+    "model": "products.size",
+    "pk": 10,
+    "fields": {
+        "name": "XL",
+        "group": 3
+    }
+},
+{
+    "model": "products.size",
+    "pk": 11,
+    "fields": {
+        "name": "XXL",
+        "group": 3
+    }
+},
+{
+    "model": "products.size",
+    "pk": 12,
+    "fields": {
+        "name": "40",
+        "group": 1
+    }
+},
+{
+    "model": "products.size",
+    "pk": 13,
+    "fields": {
+        "name": "42",
+        "group": 1
+    }
+}
+]

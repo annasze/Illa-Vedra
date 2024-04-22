@@ -1,0 +1,10 @@
+{% extends "./base.html" %}
+{% load static %}
+
+{% block content %}
+    {% include "./products/main_page.html" %}
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/carousels.js' %}"></script>
+{% endblock %}

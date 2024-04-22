@@ -1,0 +1,63 @@
+{% extends "../../base.html" %}
+{% load static %}
+{% load product_tags %}
+{% load cloudinary %}
+
+{% block style %}
+    input[type=range]::-webkit-slider-thumb {
+        pointer-events: all;
+        width: 24px;
+        height: 24px;
+        -webkit-appearance: none;
+        }
+{% endblock %}
+
+{% block title %}
+    {{campaign.name|capfirst}} |
+{% endblock %}
+
+{% block content %}
+<div>
+    <div class="w-full flex justify-center">{% cloudinary campaign.image.public_id %}</div>
+        <p class="w-full flex justify-center text-xl text-blue-900 tracking-widest p-4 font-mono font-bold">
+            {{campaign.name|capfirst}}
+        </p>
+        {% if campaign.description %}
+            <div class="w-full flex justify-center">
+                <p class="py-2 w-full lg:w-1/2 text-lg">
+                    {{campaign.description}}
+                </p>
+            </div>
+        {% endif %}
+</div>
+
+<div class="flex flex-wrap">
+    <div class="w-full">
+        <!-- Filters div -->
+        {% include "./filters.html" %}
+
+        {% if products %}
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-0">
+                {% for product in products %}
+                    {% include '../partials/product.html' %}
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="w-full text-center p-10">
+                <p class="font-medium text-lg">We're sorry</p>
+                <p>There were no results</p>
+                <p>Try using a different search term</p>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+{% if page_obj.paginator.num_pages > 1 %}
+    {% include './pagination.html' %}
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/filter.js' %}"></script>
+    <script src="{% static 'js/range.js' %}"></script>
+{% endblock %}

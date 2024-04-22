@@ -1,0 +1,60 @@
+{% extends "../../base.html" %}
+{% load static %}
+{% load product_tags %}
+{% load cloudinary %}
+
+{% block style %}
+    input[type=range]::-webkit-slider-thumb {
+        pointer-events: all;
+        width: 24px;
+        height: 24px;
+        -webkit-appearance: none;
+        }
+{% endblock %}
+
+{% block title %}
+    Search results |
+{% endblock %}
+
+{% block content %}
+<div x-data="getUserInput('q')">
+    <p class="w-full flex justify-center p-4" x-show="userInput">
+        Search results for:
+        <span class="ml-2 font-medium" x-text="userInput"></span>
+    </p>
+    <p class="w-full flex justify-center p-4" x-show="! userInput">
+        All products
+    </p>
+</div>
+
+<div class="flex flex-wrap">
+    <div class="w-full">
+        <!-- Filters div -->
+        {% include "./filters.html" %}
+
+        {% if products %}
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-0">
+                {% for product in products %}
+                    {% include '../partials/product.html' %}
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="w-full text-center p-10">
+                <p class="font-medium text-lg">We're sorry</p>
+                <p>There were no results</p>
+                <p>Try using a different search term</p>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+{% if page_obj.paginator.num_pages > 1 %}
+    {% include './pagination.html' %}
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/filter.js' %}"></script>
+    <script src="{% static 'js/range.js' %}"></script>
+    <script src="{% static 'js/userInput.js' %}"></script>
+{% endblock %}

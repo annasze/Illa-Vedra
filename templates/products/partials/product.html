@@ -1,0 +1,68 @@
+{% load cloudinary %}
+
+<div x-data="{ expanded: false }"
+     @mouseover="if(window.innerWidth >= 768) expanded = true"
+     @mouseover.away="expanded = false"
+     class="relative overflow-hidden text-center p-1"
+>
+    <div class="ease duration-300"
+         :class="{ 'h-4/5': !expanded, 'h-3/5': expanded }"
+    >
+        <a href="{% url 'products:product_detail' product.slug %}">
+            {% cloudinary product.main_image.public_id height=1000 width=615 gravity="auto" crop="fill" %}
+        </a>
+    </div>
+    <div class="absolute bg-white buttom-0 w-full h-2/5">
+        <div>
+            <a href="{% url 'products:product_detail' product.slug %}">
+                <p class="mt-1">{{ product.parent.name }}</p>
+                <ul class="flex items-center justify-center">
+                    {% if product.discounted_price %}
+                    <li class="text-red-600 font-medium m-1 after:content-['€']">
+                        {{ product.discounted_price }}
+                    </li>
+                    <li class=" line-through m-1 after:content-['€']">
+                        {{ product.price }}
+                    </li>
+                    {% else %}
+                    <li class="font-medium after:content-['€'] m-1">
+                        {{ product.price }}
+                    </li>
+                    {% endif %}
+                </ul>
+            </a>
+        </div>
+        <div class="bg-white pb-2" :class="{'hidden' : !expanded }">
+            <a href="{% url 'products:product_detail' product.slug %}">
+                <ul class="flex items-center justify-center">
+                    {% for stock in product.stock.all %}
+                    {% if stock.quantity > 0 %}
+                    <li class="m-2">{{ stock.size }}</li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+            </a>
+            {% with product.parent.all_products_json as similar_products %}
+            {% if similar_products %}
+            <div class="grid grid-cols-6">
+                {% for product in similar_products.values %}
+                {% if forloop.counter < 6 %}
+                <a href="{% url 'products:product_detail' product.slug %}" id="product.slug"
+                   class="p-1">
+                    {% cloudinary product.img_public_id height=80 width=60 gravity="auto" crop="fill" %}
+                </a>
+                {% endif %}
+                {% endfor %}
+
+                {% if similar_products|length > 5 %}
+                <a href="{% url 'products:product_detail' product.slug %}"
+                   class="flex items-center justify-center">
+                    <p>+ {{similar_products|length|add:"-5"}}</p>
+                </a>
+                {% endif %}
+            </div>
+            {% endif %}
+            {% endwith %}
+        </div>
+    </div>
+</div>

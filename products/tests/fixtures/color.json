@@ -1,0 +1,74 @@
+[
+{
+    "model": "products.color",
+    "pk": 1,
+    "fields": {
+        "name": "red",
+        "hex_code": "#FF0000"
+    }
+},
+{
+    "model": "products.color",
+    "pk": 2,
+    "fields": {
+        "name": "blue",
+        "hex_code": "#0000FF"
+    }
+},
+{
+    "model": "products.color",
+    "pk": 3,
+    "fields": {
+        "name": "green",
+        "hex_code": "#006400"
+    }
+},
+{
+    "model": "products.color",
+    "pk": 4,
+    "fields": {
+        "name": "yellow",
+        "hex_code": "#FFFF00"
+    }
+},
+{
+    "model": "products.color",
+    "pk": 5,
+    "fields": {
+        "name": "black",
+        "hex_code": "#000000"
+    }
+},
+{
+    "model": "products.color",
+    "pk": 6,
+    "fields": {
+        "name": "white",
+        "hex_code": "#FFFFFF"
+    }
+},
+{
+    "model": "products.color",
+    "pk": 7,
+    "fields": {
+        "name": "grey",
+        "hex_code": "#808080"
+    }
+},
+{
+    "model": "products.color",
+    "pk": 8,
+    "fields": {
+        "name": "olive",
+        "hex_code": "#6a760c"
+    }
+},
+{
+    "model": "products.color",
+    "pk": 9,
+    "fields": {
+        "name": "navy blue",
+        "hex_code": "#000080"
+    }
+}
+]

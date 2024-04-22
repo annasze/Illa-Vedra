@@ -1,0 +1,67 @@
+<!--code from: https://tailwindcomponents.com/component/multi-range-slider, slightly adjusted -->
+
+<div class="h-screen flex justify-center items-center" x-init="setPrice()">
+  <div x-data="range(price)"
+       x-init="setMaxPrice({{max_price}}); minTrigger(); maxTrigger();"
+       class="relative max-w-xl w-full m-8"
+  >
+    <div>
+      <input type="range"
+             step="1"
+             :min="min" :max="max"
+             @input="minTrigger"
+             x-model="minPrice"
+             class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer">
+
+      <input type="range"
+             step="1"
+             :min="min" :max="max"
+             @input="maxTrigger"
+             x-model="maxPrice"
+             class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer">
+
+      <div class="relative z-10 h-2">
+
+        <div class="absolute z-10 left-0 right-0 bottom-0 top-0 rounded-md bg-gray-200"></div>
+
+        <div class="absolute z-20 top-0 bottom-0 rounded-md bg-blue-800"
+             :style="'right:'+maxThumb+'%; left:'+minThumb+'%'"></div>
+
+        <div class="absolute z-30 w-6 h-6 top-0 left-0 bg-blue-800 rounded-full -mt-2 -ml-1"
+             :style="'left: '+minThumb+'%'"></div>
+
+        <div class="absolute z-30 w-6 h-6 top-0 right-0 bg-blue-800 rounded-full -mt-2 -mr-3"
+             :style="'right: '+maxThumb+'%'"></div>
+
+      </div>
+
+    </div>
+
+    <div class="flex justify-between items-center py-5">
+      <div class="relative">
+        <input type="text" maxlength="5" @input="minTrigger" x-model="minPrice"
+               class="px-3 py-2 border border-gray-200 w-20 text-center outline-none">
+          <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+            €
+          </div>
+      </div>
+      <div class="relative">
+        <input type="text" maxlength="5" @input="maxTrigger" x-model="maxPrice"
+               class="px-3 py-2 border border-gray-200 w-20 text-center outline-none">
+          <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+            €
+          </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="mt-auto m-8 pb-8 md:pb-0">
+    <button class="bg-blue-800 hover:bg-blue-900 text-white cursor-pointer w-full p-2"
+            @click="redirect(newParams())"
+    >
+        Submit
+    </button>
+</div>
